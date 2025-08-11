@@ -19,7 +19,7 @@ class LocationViewModel : ViewModel() {
     suspend fun fetchAddress( lat: String) {
         try {
             val result = RetrofitClient.create()
-                .getAddressFormCoordinates(lat, "AIzaSyDfim-N7J_qgfb80ocbJLJSV7-m1RzatuI")
+                .getAddressFormCoordinates(lat, "Your Google Map Key")
             _address.value = result.result
         } catch (e: Exception) {
             Log.d("LocationViewModel", "Error fetching address: ${e.message}")
